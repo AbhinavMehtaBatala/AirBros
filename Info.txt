@@ -1,0 +1,12 @@
+﻿ In this file, every path and directory's information will be listed.
+ 1. Files related to Authentication and User Controls are:
+	a. Login.aspx------------------------------------------------- 90% Done
+	b. User_Registration.aspx
+	c. Admin.aspx
+	d. Password Recovery.aspx
+	e. Profile.aspx
+
+
+
+// Todo : 
+// Password Recovery and Admin page

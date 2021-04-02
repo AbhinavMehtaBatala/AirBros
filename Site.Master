@@ -1,0 +1,155 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="AirBros.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Airbros</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <style>
+        body{
+            background-color:#d2e9ff;
+        }
+        body::-webkit-scrollbar{
+            display:none;
+        }
+       .contt{
+           margin-left:10%;
+           margin-right:10%;
+           padding-left: 20px;
+           padding-right: 20px;
+           padding-bottom: 130px;
+       }
+/*     .inp {
+            width: 130px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            position:relative;
+            top: 10px;
+            font-size: 14px;
+            background-color: white;
+            background-position: 10px 10px; 
+            background-repeat: no-repeat;
+            padding: 6px 15px 6px 15px;
+            -webkit-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+        }
+        .inp:focus {
+            width: 100%;
+        }
+    */
+        .progress-container {
+            position: fixed;
+            top:0;
+            z-index: 2000;
+            width:100%;
+            height: 4px;
+            background: #b9dcff;
+        }
+        .progress-bar {
+            height: 5px;
+            background: #4da6ff;
+            width: 0px;
+        }
+        .pro
+        {
+            width:20px;
+            height:20px;
+            margin-left:50px;
+        }
+        
+    </style>
+</head>
+<body>
+    <script>
+        // Calls the function myScroll when user scrolls the page.
+        window.onscroll = function () { myScroll() };
+
+        function myScroll() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("scrollbar").style.width = scrolled + "%";
+        }
+
+    </script>
+    <form runat="server">
+
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+         <!--Navbar Components -->
+        <div class="navbar navbar-default navbar-fixed-top">
+            <!--Progressbar -->
+            <div class="progress-container">
+                    <div class="progress-bar" id="scrollbar"></div>
+            </div>
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" runat="server" href="~/"><asp:Image AlternateText="Logo" ImageUrl="~/Images/logo.png" runat="server" /></a>
+                </div>
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/">&nbsp;&nbsp;<span class="glyphicon glyphicon-home"></span><br />Home</a></li>
+                        <li><a runat="server" href="~/About Us">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-question-sign"></span><br />About Us</a></li>
+                        <li><a runat="server" href="~/Contact Us">&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-phone-alt"></span><br />Contact</a></li>
+                        
+                        <!-- <li><asp:TextBox CssClass="inp" ID="Search" placeholder="Search...." Enabled="true" runat="server"></asp:TextBox></li> -->
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a runat="server" href="~/User_Registration">&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-user"></span><br />Register</a></li>
+                        <li id ="log"><a runat="server" href="~/Login">&nbsp;&nbsp;<span class="glyphicon glyphicon-log-in"></span><br />Login</a></li>
+                        <li id ="prof"><a id="pro" runat="server" href="~/Profile">
+                                <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-person-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
+                                    <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                    <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li><a runat="server" href="~/Admin.aspx">&nbsp;
+                            <svg width="1.5em" height="1.5em" viewBox="0 0 15 15" class="bi bi-person-lines-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7 1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm2 9a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>
+                            </svg><br />Admin
+                            </a>
+                        </li>
+                    </ul>
+
+            </div>
+        </div>
+        <div class="contt">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %>  <strong>AirBros</strong> - All Rights Reserved</p>
+            </footer>
+    </form>
+</body>
+</html>

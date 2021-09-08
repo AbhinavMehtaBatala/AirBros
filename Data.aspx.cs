@@ -12,7 +12,7 @@ namespace AirBros
 {
     public partial class Data : System.Web.UI.Page
     {
-        SqlConnection sql = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+        String confmgr = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
             display();
@@ -20,7 +20,7 @@ namespace AirBros
 
         void display()
         {
-            using (sql)
+            using (var sql = new SqlConnection(confmgr))
             {
                 sql.Open();
                 SqlCommand cmd = new SqlCommand("select * from User_Registration", sql);
@@ -33,7 +33,7 @@ namespace AirBros
         }
         void insert()
         {
-            using (sql)
+            using (var sql = new SqlConnection(confmgr))
             {
                 sql.Open();
                 SqlCommand auth = new SqlCommand();
@@ -78,7 +78,7 @@ namespace AirBros
         }
         void update_l()
         {
-            using (sql)
+            using (var sql = new SqlConnection(confmgr))
             {
                 sql.Open();
                 SqlCommand command1 = new SqlCommand("select * from User_Registration where Email = '" + Username.Text + "'", sql);
@@ -117,12 +117,10 @@ namespace AirBros
                 }
                 sql.Close();
             }
-            
-
         }
         void update_h()
         {
-            using (sql)
+            using (var sql = new SqlConnection(confmgr))
             {
                 sql.Open();
                 SqlCommand command = sql.CreateCommand();
@@ -137,7 +135,7 @@ namespace AirBros
 
         void delete()
         {
-            using (sql)
+            using (var sql = new SqlConnection(confmgr))
             {
                 sql.Open();
                 SqlCommand auth = new SqlCommand();
@@ -230,7 +228,7 @@ namespace AirBros
 
         protected void Btn1_Click(object sender, EventArgs e)
         {
-            using (sql)
+            using (var sql = new SqlConnection(confmgr))
             {
                 // This will open the connection
                 sql.Open();
@@ -260,8 +258,6 @@ namespace AirBros
                     HyperLink2.Visible = true;
                 }
             }
-            
-
         }
 
         protected void Button2_Click(object sender, EventArgs e)

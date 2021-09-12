@@ -252,4 +252,9 @@
     <div class="new">
         <asp:Label ID="Success" runat="server"></asp:Label>
     </div>
+    <div class ="map">
+        <a href="https://www.google.com/maps/place/Mehta+Computers/@31.8148629,75.2048345,19z/data=!4m5!3m4!1s0x391bc259a2ed4acd:0xad774be791255ff8!8m2!3d31.814766!4d75.2055775">
+            <image src="Images/map.JPG" width="800" height="400" alt="Location" style="vertical-align:middle;margin: 10px 100px" ></image>
+        </a>
+    </div>
 </asp:Content>

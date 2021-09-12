@@ -15,7 +15,6 @@ namespace AirBros
         SqlConnection conection = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
         
         protected void Button_Click(object sender, EventArgs e)

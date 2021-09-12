@@ -12,7 +12,18 @@ namespace AirBros
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(Session["UserEmail"] != null)
+            {
+                prof.Visible = true;
+                Logout.Visible = true;
+                UserRegistrationIcon.Visible = false;
+                log.Visible = false;
+            }
+            else
+            {
+                prof.Visible = false;
+                Logout.Visible = false;
+            }
         }
 
         public HtmlAnchor User_Profile
@@ -21,6 +32,12 @@ namespace AirBros
             {
                 return pro;
             }
+        }
+
+        protected void Logoutlink_Click(object sender, ImageClickEventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("~/");
         }
     }
 }

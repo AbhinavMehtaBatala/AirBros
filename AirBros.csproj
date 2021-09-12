@@ -143,6 +143,10 @@
     <Content Include="Images\cards\mumbai.jpg" />
     <Content Include="Images\cards\newyork.jpg" />
     <Content Include="Images\cards\shanghai.jpg" />
+    <Content Include="Images\download.png" />
+    <Content Include="Images\logout.png" />
+    <Content Include="Images\LogOutt.png" />
+    <Content Include="Images\map.JPG" />
     <Content Include="Scripts\jquery-ui-1.12.1\AUTHORS.txt" />
     <Content Include="Scripts\jquery-ui-1.12.1\external\jquery\jquery.js" />
     <Content Include="Scripts\jquery-ui-1.12.1\images\ui-icons_444444_256x240.png" />

@@ -66,6 +66,9 @@
             height:20px;
             margin-left:50px;
         }
+        .log{
+            margin-top:10px;
+        }
         
     </style>
 </head>
@@ -80,7 +83,9 @@
             var scrolled = (winScroll / height) * 100;
             document.getElementById("scrollbar").style.width = scrolled + "%";
         }
-
+        function onLogout() {
+            alert("You have been logged out successfully.");
+        }
     </script>
     <form runat="server">
 
@@ -122,14 +127,15 @@
                         <!-- <li><asp:TextBox CssClass="inp" ID="Search" placeholder="Search...." Enabled="true" runat="server"></asp:TextBox></li> -->
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a runat="server" href="~/User_Registration">&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-user"></span><br />Register</a></li>
-                        <li id ="log"><a runat="server" href="~/Login">&nbsp;&nbsp;<span class="glyphicon glyphicon-log-in"></span><br />Login</a></li>
-                        <li id ="prof"><a id="pro" runat="server" href="~/Profile">
-                                <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-person-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <li id ="UserRegistrationIcon" runat="server"><a runat="server" href="~/User_Registration">&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-user"></span><br />Register</a></li>
+                        <li id ="log" runat="server"><a runat="server" href="~/Login">&nbsp;&nbsp;<span class="glyphicon glyphicon-log-in"></span><br />Login</a></li>
+                        <li id ="prof" runat="server"><a id="pro" runat="server" href="~/Profile">&nbsp;&nbsp;&nbsp;&nbsp;
+                                <svg width="1.6em" height="1.6em" viewBox="0 0 16 16" class="bi bi-person-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
                                     <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                                     <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
                                 </svg>
+                            <br />My Profile
                             </a>
                         </li>
                         <li><a runat="server" href="~/Admin.aspx">&nbsp;
@@ -138,8 +144,11 @@
                             </svg><br />Admin
                             </a>
                         </li>
+                        <li id="Logout" runat="server" >&nbsp;&nbsp;
+                            <asp:ImageButton ID="logoutlink" CssClass="log" runat="server" ImageUrl="~/Images/LogOutt.png" OnClientClick="onLogout();" OnClick="Logoutlink_Click" Height="1.6em" Width="1.6em" ImageAlign="Bottom"/>
+                            <br />LogOut
+                            </li>
                     </ul>
-
             </div>
         </div>
         <div class="contt">

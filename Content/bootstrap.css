@@ -996,6 +996,7 @@ th {
 
 .glyphicon-log-out:before {
     content: "\e163";
+    font-size: 17px;
 }
 
 .glyphicon-new-window:before {
@@ -5207,7 +5208,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar {
     position: relative;
     padding-top: 7px;
-    min-height: 50px;
+    min-height: 52px;
     margin-bottom: 20px;
     border: 1px solid transparent;
 }

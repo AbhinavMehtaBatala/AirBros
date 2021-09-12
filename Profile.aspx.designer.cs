@@ -51,13 +51,13 @@ namespace AirBros
         protected global::System.Web.UI.WebControls.Button Butto34;
 
         /// <summary>
-        /// Username control.
+        /// Usernme control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Username;
+        protected global::System.Web.UI.WebControls.TextBox Usernme;
 
         /// <summary>
         /// Label2 control.

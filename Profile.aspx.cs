@@ -17,7 +17,10 @@ namespace AirBros
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if(Session["UserEmail"] != null)
+            {
+                Usernme.Text = Session["UserEmail"].ToString();
+            }
         }
 
         protected void BtnCancel_Click(object sender, EventArgs e)
@@ -32,7 +35,7 @@ namespace AirBros
                 sqlConnection.Open();
                 SqlCommand command = sqlConnection.CreateCommand();
                 command.CommandType = CommandType.Text;
-                command.CommandText = "update User_Registration set Name ='" + Name_TB.Text + "', Father_Name='" + FatherName_TB.Text + "', DOB='" + DOB_TB.Text + "', Mobile='" + Phone_TB.Text + "', Gender='" + Gender.SelectedValue + "', Address='" + Address_TB.Text + "', Pincode='" + Pin.Text + "', Email='" + Email_TB.Text + "', Password='" + Password_TB.Text + "' where Email='" + Username.Text + "'";
+                command.CommandText = "update User_Registration set Name ='" + Name_TB.Text + "', Father_Name='" + FatherName_TB.Text + "', DOB='" + DOB_TB.Text + "', Mobile='" + Phone_TB.Text + "', Gender='" + Gender.SelectedValue + "', Address='" + Address_TB.Text + "', Pincode='" + Pin.Text + "', Email='" + Email_TB.Text + "', Password='" + Password_TB.Text + "' where Email='" + Usernme.Text + "'";
                 command.ExecuteNonQuery();
                 sqlConnection.Close();
                 Success.Text = " Updated Successfully !";
@@ -45,7 +48,7 @@ namespace AirBros
         }
         void Authenticate()
         {
-            using (sqlConnection)
+            
             {
                 // This will open the connection
                 sqlConnection.Open();
@@ -53,15 +56,16 @@ namespace AirBros
                 SqlCommand login_command = new SqlCommand();
                 SqlDataAdapter login_data = new SqlDataAdapter();
                 DataSet login_set = new DataSet();
-                login_command.CommandText = "select * from User_Registration where Email ='" + Username.Text + "'";
+                login_command.CommandText = "select * from User_Registration where Email ='" + Usernme.Text + "'";
                 login_command.Connection = sqlConnection;
                 login_data.SelectCommand = login_command;
                 login_data.Fill(login_set, "User_Registration");
                 int checker = login_set.Tables[0].Rows.Count;
                 sqlConnection.Close();
+                int check = checker;
                 // Conditions
                 // This condition will check if there is any data by counting the number of rows in the table. 
-                if (checker > 0)
+                if (check > 0)
                 {
                     upd.Visible = true;
                 }
@@ -72,8 +76,6 @@ namespace AirBros
                     upd.Visible = false;
                 }
             }
-            
-
         }
 
         void Data1()
@@ -83,7 +85,7 @@ namespace AirBros
                 sqlConnection.Open();
                 SqlCommand command1 = sqlConnection.CreateCommand();
                 command1.CommandType = CommandType.Text;
-                command1.CommandText = "select * from User_Registration where Email ='" + Username.Text + "'";
+                command1.CommandText = "select * from User_Registration where Email ='" + Usernme.Text + "'";
                 SqlDataReader dataReader = command1.ExecuteReader();
                 while (dataReader.Read())
                 {

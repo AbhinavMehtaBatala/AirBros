@@ -78,9 +78,25 @@ namespace AirBros
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            One.Visible = false;
-            Two.Visible = false;
-            display();
+            if (txtFrom.Text != "" && txtTo.Text != "" && Button3.Text != "Departure" && Button2.Text != "Arrival")
+            {
+                One.Visible = false;
+                Two.Visible = false;
+                display();
+            }
+            else
+            {
+                Response.Write("Enter values in all fields");
+            }
+        }
+        protected void BookTicket(object sender, EventArgs e)
+        {
+            String From,To,Departure,Arrival,Passengers;
+            From = Label3
+            To = txtTo.Text;
+            Departure = Button3.Text;
+            Arrival = Button2.Text;
+            Passengers = DropDownList1.SelectedValue;
         }
     }
 }

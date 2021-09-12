@@ -24,7 +24,7 @@ namespace AirBros
         }
         void Authenticate()
         {
-            using (conf)
+            
             {
                 // This will open the connection
                 conf.Open();
@@ -42,8 +42,12 @@ namespace AirBros
                 // This condition will check if there is any data by counting the number of rows in the table. 
                 if (checker > 0)
                 {
-                    Session["EMail"] = Username.Text;
-                    Response.Redirect("Profile.aspx");
+                    Session["UserEmail"] = Username.Text;
+                    //HttpCookie Cookie = new HttpCookie("Username");
+                    //Cookie.Value = Username.Text;
+                    //Cookie.Expires = DateTime.Now.AddHours(1);
+                    //Response.Cookies.Add(Cookie);
+                    Response.Redirect("~/");
                 }
                 else
                 {

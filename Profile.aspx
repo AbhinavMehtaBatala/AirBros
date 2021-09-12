@@ -154,7 +154,7 @@
                     <td style="height: 60px; text-align:center; position:relative;" colspan="2">
                         <div>
                             <i class="glyphicon glyphicon-envelope icon"></i>  
-                            <asp:TextBox ID="Username" runat="server" TextMode="Email" placeholder="Enter Email" CssClass="input-field" ToolTip="E-Mail" ForeColor="Gray"></asp:TextBox>
+                            <asp:TextBox ID="Usernme" runat="server" TextMode="Email" placeholder="Enter Email" CssClass="input-field" ToolTip="E-Mail" ForeColor="Gray"></asp:TextBox>
                         </div>
                     </td>
                 </tr>

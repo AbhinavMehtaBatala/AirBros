@@ -18,7 +18,6 @@
                 source: 'CityHandler.ashx'
             });
         });
-        
     </script>
     <style>
         @media (min-width:768px){
@@ -186,10 +185,12 @@
             padding: 16px;
             text-align:center;
             background-color: #f1f1f1;
+            border-radius:5px;
         }
         .int_div
         {
             display: inline-block;
+            height: 100px;
         }
     </style>
     <div class="search">
@@ -199,16 +200,16 @@
             </div>
             <div class="Row">
                 <div>
-                    <asp:TextBox ID="txtFrom" placeholder="From" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox ID="txtFrom" placeholder="From" runat="server" CssClass="form-control" ClientIDMode="Static" ValidationGroup="abc"></asp:TextBox>
                     <div style="padding-top:50px;">
-                        <asp:Button ID="Button1" CssClass="butn" runat="server" Text="Go !" ForeColor="White" Font-Size="Large" OnClick="Button1_Click" />
+                        <asp:Button ID="Button1" CssClass="butn" runat="server" Text="Go !" ForeColor="White" Font-Size="Large" OnClick="Button1_Click" ValidationGroup="abc" />
                     </div>
                 </div>
                 <div>
-                    <asp:TextBox ID="txtTo" runat="server" placeholder="To" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtTo" runat="server" placeholder="To" ClientIDMode="Static" CssClass="form-control" ValidationGroup="abc"></asp:TextBox>
                 </div>
                 <div>
-                    <asp:Button ID="Button3" runat="server" CssClass="form-control" OnClick="Button3_Click" Text="Departure" BackColor="White" />
+                    <asp:Button ID="Button3" runat="server" CssClass="form-control" OnClick="Button3_Click" Text="Departure" BackColor="White" ValidationGroup="abc" />
                     <asp:Panel runat="server" ID="cal1" Visible="false">
                         <asp:Calendar ID="Calendar1" runat="server" OnDayRender="Calendar1_DayRender" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Arial Narrow" Font-Size="9pt" ForeColor="Black" Height="120px" NextPrevFormat="FullMonth" Width="300px" OnSelectionChanged="Calendar1_SelectionChanged" CellPadding="1" ShowGridLines="True" FirstDayOfWeek="Monday">
                             <DayHeaderStyle Font-Bold="True" Font-Size="8pt" ForeColor="DodgerBlue" />
@@ -222,7 +223,7 @@
                 </div>
                 
                 <div>
-                    <asp:Button ID="Button2" CssClass="form-control" runat="server" Text="Arrival" BackColor="White" OnClick="Button2_Click" />
+                    <asp:Button ID="Button2" CssClass="form-control" runat="server" Text="Arrival" BackColor="White" OnClick="Button2_Click" ValidationGroup="abc" />
                     <asp:Panel runat="server" ID="cal2" Visible="false">
                         <asp:Calendar ID="Calendar2" runat="server" OnDayRender="Calendar2_DayRender" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Arial Narrow" Font-Size="9pt" ForeColor="Black" Height="120px" NextPrevFormat="FullMonth" Width="300px" OnSelectionChanged="Calendar2_SelectionChanged" CellPadding="1" ShowGridLines="True" FirstDayOfWeek="Monday">
                             <DayHeaderStyle Font-Bold="True" Font-Size="8pt" ForeColor="DodgerBlue" />
@@ -236,7 +237,6 @@
                 </div>
                 <div>
                     <asp:Label ID="Label1" runat="server" Text="Passengers : "></asp:Label>
-                    
                     <asp:DropDownList ID="DropDownList1" runat="server" Font-Bold="True">
                         <asp:ListItem Value="1"></asp:ListItem>
                         <asp:ListItem Value="2"></asp:ListItem>
@@ -442,6 +442,9 @@
                             </div>
                             <div class="int_div">
                                 <asp:Label ID="Label8" runat="server" Text='<%# Eval("Price") %>'></asp:Label>
+                            </div>
+                            <div class="int_div">
+                                <asp:Button ID="Book" Text="Book Now!" runat="server" OnClick="BookTicket" />
                             </div>
                         </div>
                     </div>

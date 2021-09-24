@@ -420,7 +420,6 @@
         <div class="flex-container" style="margin-bottom:10px;">
             <asp:DataList ID="DataList1" runat="server" CellPadding="4" ForeColor="#333333">
                 <ItemTemplate>
-                    <div>
                         <div class="table_hidden">
                         <!--<div class="int_div">
                                 <asp:Label ID="Label2" runat="server" Text='<%# Eval("Id") %>'></asp:Label>&nbsp;
@@ -447,7 +446,6 @@
                                 <asp:Button ID="Book" Text="Book Now!" runat="server" OnClick="BookTicket" />
                             </div>
                         </div>
-                    </div>
                 </ItemTemplate>
                 <SelectedItemStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
             </asp:DataList>  

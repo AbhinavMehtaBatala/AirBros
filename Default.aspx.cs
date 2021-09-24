@@ -92,7 +92,15 @@ namespace AirBros
         protected void BookTicket(object sender, EventArgs e)
         {
             String From,To,Departure,Arrival,Passengers;
-            From = Label3
+            if(Session["UserEmail"] == null)
+            {
+                Response.Redirect("~/Login.aspx");
+            }
+            else
+            {
+                _ = (DataList1.Items[0].FindControl("Label3") as Label).Text;
+            }
+            From = txtFrom.Text;
             To = txtTo.Text;
             Departure = Button3.Text;
             Arrival = Button2.Text;

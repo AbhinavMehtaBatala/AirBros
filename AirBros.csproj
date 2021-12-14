@@ -119,8 +119,10 @@
     <Content Include="Content\calendar\tavo-calendar.css" />
     <Content Include="Content\calendar\tavo-calendar.js" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\Style.css" />
     <Content Include="Data.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="Error.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Forgot_Password.aspx" />
@@ -165,6 +167,7 @@
     <Content Include="Scripts\jquery-ui-1.12.1\jquery-ui.theme.css" />
     <Content Include="Scripts\jquery-ui-1.12.1\jquery-ui.theme.min.css" />
     <Content Include="Scripts\jquery-ui-1.12.1\LICENSE.txt" />
+    <Content Include="Booking_Form.aspx" />
     <Content Include="WebService.asmx" />
     <Content Include="CityHandler.ashx" />
     <Content Include="Scripts\jquery-ui-1.12.1\package.json" />
@@ -311,6 +314,13 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Booking_Form.aspx.cs">
+      <DependentUpon>Booking_Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Booking_Form.aspx.designer.cs">
+      <DependentUpon>Booking_Form.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebService.asmx.cs">
       <DependentUpon>WebService.asmx</DependentUpon>

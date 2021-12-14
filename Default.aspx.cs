@@ -98,13 +98,20 @@ namespace AirBros
             }
             else
             {
-                _ = (DataList1.Items[0].FindControl("Label3") as Label).Text;
+                _ = ((Label)DataList1.Items[0].FindControl("Label3")).Text;
             }
+            
             From = txtFrom.Text;
             To = txtTo.Text;
             Departure = Button3.Text;
             Arrival = Button2.Text;
             Passengers = DropDownList1.SelectedValue;
+            Session["From"] = From;
+            Session["To"] = To;
+            Session["Departure"] = Departure;
+            Session["Arrival"] = Arrival;
+            Session["Passengers"] = Passengers;
+            Response.Redirect("/Booking_Form.aspx");
         }
     }
 }

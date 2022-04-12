@@ -12,7 +12,7 @@
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400" rel="stylesheet">
 
 	<!-- Bootstrap -->
-	<link type="text/css" rel="stylesheet" href="Content/bootstrap.min.css" />
+	<link type="text/css" rel="stylesheet" href="Content/bootstrap.css" />
 
 	<!-- Custom stlylesheet -->
 	<link type="text/css" rel="stylesheet" href="Content/Style.css" />

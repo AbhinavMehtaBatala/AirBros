@@ -120,6 +120,7 @@
     <Content Include="Content\calendar\tavo-calendar.js" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\Style.css" />
+    <Content Include="Content\User.css" />
     <Content Include="Data.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Error.aspx" />
